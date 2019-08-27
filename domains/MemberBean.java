@@ -4,34 +4,46 @@ package com.bank.domains;
  */
 public class MemberBean {
 		private String id, pass, name, ssn;
-		
-		public void setId(String id) {
-			this.id = id;
-		}
+
 		public String getId() {
 			return id;
 		}
-		public void setPass(String pass) {
-			this.pass = pass;
+
+		public void setId(String id) {
+			this.id = id;
 		}
+
 		public String getPass() {
 			return pass;
 		}
-		public void setName(String name) {
-			this.name = name;
+
+		public void setPass(String pass) {
+			this.pass = pass;
 		}
+
 		public String getName() {
 			return name;
 		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
+		public String getSsn() {
+			return ssn;
+		}
+
 		public void setSsn(String ssn) {
 			this.ssn = ssn;
 		}
-		public String getSsb() {
-			return ssn;
-		}
+
 		@Override
-			public String toString() {
-				// TODO Auto-generated method stub
-				return String.format("");
-			}
+		public String toString() {
+			return "회원정보 [id=" + id + 
+									", pass=" + pass + 
+									", name=" + name + 
+									", ssn=" + ssn + "]";
+		}
+		
+		
 }
