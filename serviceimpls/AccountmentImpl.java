@@ -90,7 +90,7 @@ public class AccountmentImpl implements AccountmentService{
 	}
 
 	@Override
-	public void depositMoney(AccountBean param) {  //예치금
+	public void depositMoney(AccountBean param) {  //입금  
 		
 	}
 
@@ -100,9 +100,12 @@ public class AccountmentImpl implements AccountmentService{
 	}
 
 	@Override
-	public void deleteAccountNum(String accountNum) { 
-		for(int i = 0;i<acCount;i++) {  //
-			if() {}
+	public void deleteAccountNum(String accountNum) { //중간거 땡겨 앞으로~, count--; 정보가 동일하면 count--,  정해져있으니까 폴, if
+		MemberBean member = new MemberBean();
+		for(int i = 0;i<acCount;i++) {  
+			if(accountNum.equals(acBeans[i].getAccountNum())) {
+				
+			}
 		}
 		
 		

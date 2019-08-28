@@ -1,36 +1,80 @@
-package com.bank.serviceimpls;
+               package com.bank.serviceimpls;
 
 import com.bank.domains.*;
 import com.bank.services.MemberService;
 
 public class MemberServiceImpl implements MemberService{
-		private MemberBean[] members;
-		private int count;
+		private CustomerBean[] cuss;
+		private EmployeeBean[] emps;
+		private int cuscount, empcount;
 		
 		public MemberServiceImpl() {
-				MemberBean members = new MemberBean();
-				count = 0;
+				 cuss = new CustomerBean[10];
+				 emps = new EmployeeBean[10];
+				cuscount = 0;
+				empcount = 0;
 		}
 		
 	@Override
-	public void join(CustomerBean param) {
-		
-		
+	public void join(CustomerBean param) {  //하나씩 컨트롤러에 만들어서 비교 분석, 
+			cuss[cuscount] = param;
+			cuscount++;
 	}
+	@Override
+	public void register(EmployeeBean param) {
+		emps[empcount] = param;
+		empcount++;
+	}
+	
 
 	@Override
 	public CustomerBean[] findAllCustomers() {
-		return null;
+		return cuss;
 	}
 
 	@Override
-	public EmployeeBean[] findAllAdmins() {
-		return null;
+	public EmployeeBean[] findAllMembers() {
+		return emps;
 	}
 
 	@Override
-	public MemberBean[] findByName(String name) {
-		return null;
+	public MemberBean[] findByName(String name) { 
+		int count1=0, count2=0, count3=0;
+		for(int i=0;i<cuscount;i++) {
+			if(name.equals(cuss[i].getName())) {
+				count1++;
+				break;
+			}
+		}
+		for(int i= 0;i<empcount;i++) {
+			if(name.equals(emps[i].getName())) {
+				count2++;
+				break;
+			}
+		}
+		count3 = count1+count2;
+		MemberBean[] members = new MemberBean[count3];
+		int j =0;
+		for(int i=0;i<count3;i++) {
+			if(name.equals(cuss[i].getName())) {
+				members[j] = cuss[i];
+				j++;
+				if(count1==j) {
+					break;	
+				}
+			}
+		}
+		int k = 0;
+		for(int i=0;i<count3;i++) {
+			if(name.equals(emps[i].getName())) {
+				members[k]=emps[i];
+				k++;
+				if(count2==k) {
+					break;
+				}
+			}
+		}
+		return members;
 	}
 
 	@Override
@@ -50,7 +94,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public int countAdmins() {
+	public int countEmployees() {
 		return 0;
 	}
 
@@ -68,5 +112,7 @@ public class MemberServiceImpl implements MemberService{
 	public void deleteMember(MemberBean param) {
 		
 	}
+
+	
 	
 }
