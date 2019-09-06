@@ -1,49 +1,12 @@
-package com.bank.domains;
-/*
- * 아이디, 비번, 이름, 주민번호 id, pass, name, ssn  // 랜덤r 두개 이어 연결
- */
-public class MemberBean {
-		private String id, pass, name, ssn;
+package com.bank.web.domains;
 
-		public String getId() {
-			return id;
-		}
+import java.io.Serializable;
 
-		public void setId(String id) {
-			this.id = id;
-		}
+import lombok.Data;
+@Data
+public class MemberBean implements Serializable {
 
-		public String getPass() {
-			return pass;
-		}
+	private static final long serialVersionUID = 1L;     
+	private String id,pw,name, ssn;
 
-		public void setPass(String pass) {
-			this.pass = pass;
-		}
-
-		public String getName() {
-			return name;
-		}
-
-		public void setName(String name) {
-			this.name = name;
-		}
-
-		public String getSsn() {
-			return ssn;
-		}
-
-		public void setSsn(String ssn) {
-			this.ssn = ssn;
-		}
-
-		@Override
-		public String toString() {
-			return "회원정보 [id=" + id + 
-									", pass=" + pass + 
-									", name=" + name + 
-									", ssn=" + ssn + "]";
-		}
-		
-		
 }

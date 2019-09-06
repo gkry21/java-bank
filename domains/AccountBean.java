@@ -1,46 +1,12 @@
-package com.bank.domains;
-/*
- * 계좌번호, 거래일, 돈 accountNum, today, money
- */
-public class AccountBean extends MemberBean{
-	private String accountNum,today,money;
+package com.bank.web.domains;
 
-	
-	public String getAccountNum() {
-		return accountNum;
-	}
+import java.io.Serializable;
 
+import lombok.Data;
+@Data
+public class AccountBean implements Serializable{
 
-	public void setAccountNum(String accountNum) {
-		this.accountNum = accountNum;
-	}
-
-
-	public String getToday() {
-		return today;
-	}
-
-
-	public void setToday(String today) {
-		this.today = today;
-	}
-
-
-	public String getMoney() {
-		return money;
-	}
-
-
-	public void setMoney(String money) {
-		this.money = money;
-	}
-
-
-	@Override
-	public String toString() {
-		return "계좌정보 [계좌번호=" + accountNum + 
-								", 개설일=" + today + 
-								", 금액=" + money + "]";
-	}
+	private static final long serialVersionUID = 1L;
+	private String accountNum, regdate, money;
 
 }

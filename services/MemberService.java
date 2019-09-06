@@ -1,18 +1,17 @@
-package com.bank.services;
-import com.bank.domains.*;
-import com.bank.domains.CustomerBean;;
-
+package com.bank.web.services;
+import com.bank.web.domains.*;
+import java.util.List;
 public interface MemberService {
 	public void join(CustomerBean param);
 	public void register(EmployeeBean param);
-	public CustomerBean[] findAllCustomers();
-	public EmployeeBean[] findAllMembers();
-	public MemberBean[] findByName(String name); // 고객, 사원 공용메소드
-	public MemberBean findById(String id); // 고객, 사원 공용메소드
-	public boolean login(MemberBean param); // 고객, 사원 공용메소드
-	public int countCustomers(); // 고객수
-	public int countEmployees(); // 직원수
+	public List<CustomerBean> findAllCustomers();
+	public List<EmployeeBean> findAllEmployees();
+	public List<MemberBean> findByName(String name); 
+	public MemberBean findById(String id); 
+	public CustomerBean login(CustomerBean param); 
+	public int countCustomers(); 
+	public int countEmployees(); 
 	public boolean existId(String id);
 	public void updatePass(MemberBean param);
-	public void deleteMember(MemberBean param);
+	public boolean deleteMember(MemberBean param);
 }

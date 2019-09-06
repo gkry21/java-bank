@@ -1,21 +1,12 @@
-package com.bank.domains;
+package com.bank.web.domains;
 
-public class EmployeeBean extends MemberBean {
+import lombok.Data;
+
+@Data
+public class EmployeeBean extends MemberBean{
+
+	private static final long serialVersionUID = 1L;
 	private String sabun;
-	
-	public void setSabun(String sabun) {
-		this.sabun = sabun;
-	}
-	public String getSabun() {
-		return sabun;
-	}
-	@Override
-	public String toString() {
-		return "사원번호 = " +sabun
-				+ "[회원정보=" + getId() + 
-				", 비번=" + getPass() + 
-				", 이름=" + getName() + 
-				", 주민번호=" + getSsn() + "]";
-	}
 
+	
 }
